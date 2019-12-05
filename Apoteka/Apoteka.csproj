@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F53604F6-0DE9-40D5-AFCF-3060A0B822A6}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Apoteka</RootNamespace>
+    <AssemblyName>Apoteka</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>apoteka_ico.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="MySql.Data, Version=6.9.10.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="MySql.Data.Entity.EF6, Version=6.9.10.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="EFKlase\apoteka.cs" />
+    <Compile Include="EFKlase\ApotekaDb.cs" />
+    <Compile Include="EFKlase\dobavljac.cs" />
+    <Compile Include="EFKlase\DodatneDefinicijeEFKlasa.cs" />
+    <Compile Include="EFKlase\faktura.cs" />
+    <Compile Include="EFKlase\lijek.cs" />
+    <Compile Include="EFKlase\mjesto.cs" />
+    <Compile Include="EFKlase\narudzba.cs" />
+    <Compile Include="EFKlase\racun.cs" />
+    <Compile Include="EFKlase\recept.cs" />
+    <Compile Include="EFKlase\sertifikat.cs" />
+    <Compile Include="EFKlase\stavkanarudzbe.cs" />
+    <Compile Include="EFKlase\stavkaracuna.cs" />
+    <Compile Include="EFKlase\zaposleni.cs" />
+    <Compile Include="Forme\AdminForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\AdminForma.Designer.cs">
+      <DependentUpon>AdminForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\OAplikacijiForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\OAplikacijiForma.Designer.cs">
+      <DependentUpon>OAplikacijiForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\ReceptForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\ReceptForma.Designer.cs">
+      <DependentUpon>ReceptForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\InformacijeOApoteciForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\InformacijeOApoteciForma.Designer.cs">
+      <DependentUpon>InformacijeOApoteciForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\FarmaceutForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\FarmaceutForma.Designer.cs">
+      <DependentUpon>FarmaceutForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\DobavljacForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\DobavljacForma.Designer.cs">
+      <DependentUpon>DobavljacForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\LijekForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\LijekForma.Designer.cs">
+      <DependentUpon>LijekForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\MenadzerForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\MenadzerForma.Designer.cs">
+      <DependentUpon>MenadzerForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\PregledMjestaForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\PregledMjestaForma.Designer.cs">
+      <DependentUpon>PregledMjestaForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\MjestoForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\MjestoForma.Designer.cs">
+      <DependentUpon>MjestoForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\LoginForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\LoginForma.Designer.cs">
+      <DependentUpon>LoginForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\PromjenaLozinkeForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\PromjenaLozinkeForma.Designer.cs">
+      <DependentUpon>PromjenaLozinkeForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\NarudzbaForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\NarudzbaForma.Designer.cs">
+      <DependentUpon>NarudzbaForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forme\UnosZaposlenogForma.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forme\UnosZaposlenogForma.Designer.cs">
+      <DependentUpon>UnosZaposlenogForma.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Podrska\Enkripcija.cs" />
+    <Compile Include="Podrska\MessageBoxManager.cs" />
+    <Compile Include="Podrska\PDFGenerator.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forme\AdminForma.resx">
+      <DependentUpon>AdminForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\FarmaceutForma.resx">
+      <DependentUpon>FarmaceutForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\OAplikacijiForma.resx">
+      <DependentUpon>OAplikacijiForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\ReceptForma.resx">
+      <DependentUpon>ReceptForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\InformacijeOApoteciForma.resx">
+      <DependentUpon>InformacijeOApoteciForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\DobavljacForma.resx">
+      <DependentUpon>DobavljacForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\LijekForma.resx">
+      <DependentUpon>LijekForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\MenadzerForma.resx">
+      <DependentUpon>MenadzerForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\PregledMjestaForma.resx">
+      <DependentUpon>PregledMjestaForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\MjestoForma.resx">
+      <DependentUpon>MjestoForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\LoginForma.resx">
+      <DependentUpon>LoginForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\PromjenaLozinkeForma.resx">
+      <DependentUpon>PromjenaLozinkeForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\NarudzbaForma.resx">
+      <DependentUpon>NarudzbaForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forme\UnosZaposlenogForma.resx">
+      <DependentUpon>UnosZaposlenogForma.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="apoteka_ico.ico" />
+    <None Include="Resources\apoteka_png.png" />
+    <None Include="Resources\calibril.ttf" />
+    <None Include="Resources\export_to_pdf.png" />
+    <None Include="Resources\create_order_list.png" />
+    <None Include="Resources\add_deliverer.png" />
+    <None Include="Resources\add_medicine.png" />
+    <None Include="Resources\login.png" />
+    <None Include="Resources\list_view.png" />
+    <None Include="Resources\table_view.png" />
+    <None Include="Resources\add_place.png" />
+    <None Include="Resources\lock_receipt.png" />
+    <None Include="Resources\create_receipt.png" />
+    <None Include="Resources\add_receipt_item.png" />
+    <None Include="Resources\logout.png" />
+    <None Include="Resources\info.png" />
+    <None Include="Resources\add_employee.png" />
+    <None Include="Resources\trash.png" />
+    <None Include="Resources\change.png" />
+    <None Include="Resources\edit.png" />
+    <None Include="Resources\eraser.png" />
+    <None Include="Resources\cancel.png" />
+    <None Include="Resources\save.png" />
+    <None Include="Resources\loginUnlock.png" />
+    <None Include="Resources\loginLock.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
